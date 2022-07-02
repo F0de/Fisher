@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
+    @ObservedObject var fishingHistory = FishingHistory()
 //    @State var fish = [ //remove this from here
 //        Fish(number: 12, hour: 13, minute: 40),
 //        Fish(number: 11, hour: 13, minute: 20),
@@ -24,21 +25,21 @@ struct DetailView: View {
 //    ]
     
     var body: some View  {
-        List(fishes) { fishes in
-            FishRow(fishes: fishes)
+        List(fishingHistory.fishes) { fish in
+            FishRow(fishes: fish)
         }
         .navigationBarTitle("Fish", displayMode: .inline)
     }
 }
 
 struct FishRow: View {
-    var fish: Fish //edit in future
+    var fishes: History.Fish //edit in future
     
     var body: some View {
         HStack {
-            Text("\(fish.number)")
+            Text("\(fishes.number)")
             Spacer()
-            Text("\(fish.hour):\(fish.minute)")
+            Text("\(fishes.hour):\(fishes.minute)")
         }
     }
 }

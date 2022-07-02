@@ -10,11 +10,6 @@ import Foundation
 class FishingHistory: ObservableObject {
     @Published var selectedView = 2
     @Published var showingDetail = false
-    @Published var fishingDays: [History.FishingDay] = [
-        History.FishingDay(fishCount: 15, day: 18, month: 6, year: 2022),
-        History.FishingDay(fishCount: 21, day: 12, month: 6, year: 2022),
-        History.FishingDay(fishCount: 7, day: 11, month: 5, year: 2022)
-    ]
     @Published var fishes: [History.Fish] = [
         History.Fish(number: 12, hour: 13, minute: 40),
         History.Fish(number: 11, hour: 13, minute: 20),
@@ -29,14 +24,34 @@ class FishingHistory: ObservableObject {
         History.Fish(number: 2, hour: 6, minute: 18),
         History.Fish(number: 1, hour: 5, minute: 47)
     ]
+    @Published var fishingDays: [History.FishingDay] = [
+        History.FishingDay(fishCount: 12, day: 18, month: 6, year: 2022),
+        History.FishingDay(fishCount: 21, day: 12, month: 6, year: 2022),
+        History.FishingDay(fishCount: 7, day: 11, month: 5, year: 2022)
+    ]
+//    @Published var fishing: [History.FishingDay] = []
+    
+//    init() {
+//        addFishing()
+//    }
+    
+//    func addFishing() {
+//        fishing = fishingDays
+//    }
     
     func addFish() {
-        fishingDays[0].fishCount += 1
+//        fishes.append()
+        //        fishingDays[0].fishCount += 1
     }
     func deleteFish() {
-        if fishingDays[0].fishCount >= 1 {
-            fishingDays[0].fishCount -= 1
-        }
+//        if fishingDays[0].fishCount >= 1 {
+//            fishingDays[0].fishCount -= 1
+//        }
     }
 }
 
+//var fishingDays: [History.FishingDay] = [
+//    History.FishingDay(fishCount: 18, day: 6, month: 6, year: 2022),
+//    History.FishingDay(fishCount: 21, day: 12, month: 6, year: 2022),
+//    History.FishingDay(fishCount: 7, day: 11, month: 5, year: 2022)
+//]
