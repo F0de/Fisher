@@ -30,12 +30,12 @@ struct ContentView: View {
                 Text("Home")
             } .tag(1)
             NavigationView{
-                List($fishingHistory.fishingDay) { fishingDay in
+                List(fishingHistory.fishingDays) { fishing in
                     NavigationLink(destination: DetailView()) {
-                        FishingRow(fishingDay: fishingHistory.fishingDay)
+                        FishingRow(fishingDays: fishing)
                     }
                 }
-                .navigationBarTitle("Fishing")
+                .navigationTitle("Fishing")
             }
             .tabItem{
                 Image(systemName: "book")
@@ -66,13 +66,14 @@ struct ContentView: View {
 }
 
 struct FishingRow: View {
-    var fishingDays: FishingDays //edit in future
-    
+    var fishingDays: History.FishingDay //edit in future
+
     var body: some View {
         HStack{
             Text("\(fishingDays.fishCount)")
             Spacer()
-            Text("\(fishingDays.day).\(fishingDays.month)." + String(fishingDays.year)).foregroundColor(.gray)
+            Text("\(fishingDays.date)").foregroundColor(.gray)
+//            Text("\(fishingDays.day).\(fishingDays.month)." + String(fishingDays.year)).foregroundColor(.gray)
         }
     }
 }

@@ -8,44 +8,48 @@
 import SwiftUI
 
 struct DetailView: View {
-//    @State var fish = [ //remove this from here
-//        Fish(number: 12, hour: 13, minute: 40),
-//        Fish(number: 11, hour: 13, minute: 20),
-//        Fish(number: 10, hour: 10, minute: 43),
-//        Fish(number: 9, hour: 10, minute: 23),
-//        Fish(number: 8, hour: 10, minute: 11),
-//        Fish(number: 7, hour: 9, minute: 40),
-//        Fish(number: 6, hour: 8, minute: 23),
-//        Fish(number: 5, hour: 7, minute: 23),
-//        Fish(number: 4, hour: 6, minute: 41),
-//        Fish(number: 3, hour: 6, minute: 34),
-//        Fish(number: 2, hour: 6, minute: 18),
-//        Fish(number: 1, hour: 5, minute: 47)
-//    ]
+    @ObservedObject var fishingHistory = FishingHistory()
     
     var body: some View  {
-        List(fishes) { fishes in
-            FishRow(fishes: fishes)
-        }
-        .navigationBarTitle("Fish", displayMode: .inline)
+            List(fishingHistory.fishes) { fish in
+                FishRow(fishes: fish)
+            }
+            .navigationBarTitle("Fish", displayMode: .inline)
     }
 }
 
 struct FishRow: View {
-    var fish: Fish //edit in future
+    var fishes: History.Fish
     
     var body: some View {
         HStack {
-            Text("\(fish.number)")
+            Text("\(fishes.number)")
             Spacer()
-            Text("\(fish.hour):\(fish.minute)")
+            Text("\(fishes.hour):\(fishes.minute)")
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         DetailView()
+            .preferredColorScheme(.dark)
+        DetailView()
+            .preferredColorScheme(.light)
     }
 }

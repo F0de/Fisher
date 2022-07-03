@@ -8,15 +8,19 @@
 import Foundation
 
 struct History {
-    private (set) var fishes: Array<Fish>
-    private (set) var fishingDays: Array<FishingDay>
+//    private (set) var fishes: Array<Fish>
+//    private (set) var fishingDays: Array<FishingDay>
+//    let calendar = Calendar.current
+//    let date = Date()
+    
+    
     
     struct FishingDay: Identifiable {
         var id = UUID()
         var fishCount: Int
-        var day: Int
-        var month: Int
-        var year: Int
+        var date: String
+//        var month: String
+//        var year: String
     }
     struct Fish: Identifiable {
         var id = UUID()
