@@ -72,7 +72,8 @@ struct FishingRow: View {
         HStack{
             Text("\(fishingDays.fishCount)")
             Spacer()
-            Text("\(fishingDays.day).\(fishingDays.month)." + String(fishingDays.year)).foregroundColor(.gray)
+            Text("\(fishingDays.date)").foregroundColor(.gray)
+//            Text("\(fishingDays.day).\(fishingDays.month)." + String(fishingDays.year)).foregroundColor(.gray)
         }
     }
 }

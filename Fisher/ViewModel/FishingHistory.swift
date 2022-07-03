@@ -25,9 +25,9 @@ class FishingHistory: ObservableObject {
         History.Fish(number: 1, hour: 5, minute: 47)
     ]
     @Published var fishingDays: [History.FishingDay] = [
-        History.FishingDay(fishCount: 12, day: 18, month: 6, year: 2022),
-        History.FishingDay(fishCount: 21, day: 12, month: 6, year: 2022),
-        History.FishingDay(fishCount: 7, day: 11, month: 5, year: 2022)
+        History.FishingDay(fishCount: 12, date: Date.now.formatted(date: .long, time: .shortened)),
+        History.FishingDay(fishCount: 21, date: Date.now.formatted(date: .long, time: .shortened)),
+        History.FishingDay(fishCount: 7, date: Date.now.formatted(date: .long, time: .shortened))
     ]
 //    @Published var fishing: [History.FishingDay] = []
     
@@ -40,12 +40,12 @@ class FishingHistory: ObservableObject {
 //    }
     
     func addFish() {
-//        fishes.append()
-        //        fishingDays[0].fishCount += 1
+        //        fishes.append()
+        fishingDays[0].fishCount += 1
     }
     func deleteFish() {
 //        if fishingDays[0].fishCount >= 1 {
-//            fishingDays[0].fishCount -= 1
+        fishingDays[0].fishCount -= 1
 //        }
     }
 }
