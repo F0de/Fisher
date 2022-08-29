@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G83" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Fish" representedClassName="Fish" syncable="YES">
+        <attribute name="number" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="fishingDay" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FishingDay" inverseName="fish" inverseEntity="FishingDay"/>
+    </entity>
+    <entity name="FishingDay" representedClassName="FishingDay" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="fishCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="fish" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Fish" inverseName="fishingDay" inverseEntity="Fish"/>
+    </entity>
+    <elements>
+        <element name="Fish" positionX="-180.7718505859375" positionY="-356.19189453125" width="128" height="74"/>
+        <element name="FishingDay" positionX="-147.8449096679688" positionY="-141.7461242675781" width="128" height="74"/>
+    </elements>
+</model>

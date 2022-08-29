@@ -8,24 +8,30 @@
 import SwiftUI
 
 struct DetailView: View {
-    @ObservedObject var fishingHistory = FishingHistory()
+    @ObservedObject var vm = FishingHistory()
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var fishingDays: FetchedResults<FishingDay>
     
     var body: some View  {
-            List(fishingHistory.fishes) { fish in
-                FishRow(fishes: fish)
+        List {
+            ForEach(fishingDays, id: \.self) { fishingDay in
+                FishRow(fishingDays: fishingDay)
             }
-            .navigationBarTitle("Fish", displayMode: .inline)
+        }
+        .navigationBarTitle("Fish", displayMode: .inline)
     }
 }
 
 struct FishRow: View {
-    var fishes: History.Fish
-    
+    var fishingDays: FishingDay
+
     var body: some View {
-        HStack {
-            Text("\(fishes.number)")
-            Spacer()
-            Text("\(fishes.hour):\(fishes.minute)")
+        ForEach(fishingDays.fishArray, id: \.self) { fish in
+            HStack {
+                Text("\(fish.number)")
+                Spacer()
+                Text("\((fish.time?.formatted(date: .omitted, time: .shortened))!)")
+            }
         }
     }
 }

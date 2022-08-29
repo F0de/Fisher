@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct FisherApp: App {
+    @StateObject private var dataController = FishingHistory()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }

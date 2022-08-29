@@ -7,24 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F590C7A22879AE4A0043CFFA /* CoreDataModelFishingHistory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F590C7A02879AE490043CFFA /* CoreDataModelFishingHistory.xcdatamodeld */; };
 		F59954D22865FAB3004F936C /* FisherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59954D12865FAB3004F936C /* FisherApp.swift */; };
 		F59954D42865FAB3004F936C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59954D32865FAB3004F936C /* ContentView.swift */; };
 		F59954D62865FAB9004F936C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F59954D52865FAB9004F936C /* Assets.xcassets */; };
 		F59954D92865FAB9004F936C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F59954D82865FAB9004F936C /* Preview Assets.xcassets */; };
-		F59954E328679828004F936C /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59954E228679828004F936C /* History.swift */; };
 		F59954E52867A052004F936C /* FishingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59954E42867A052004F936C /* FishingHistory.swift */; };
 		F59954E72867A864004F936C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59954E62867A864004F936C /* DetailView.swift */; };
+		F5B408DF28B86E0D00E77337 /* FishingDay+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B408DB28B86E0D00E77337 /* FishingDay+CoreDataClass.swift */; };
+		F5B408E028B86E0D00E77337 /* FishingDay+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B408DC28B86E0D00E77337 /* FishingDay+CoreDataProperties.swift */; };
+		F5B408E128B86E0D00E77337 /* Fish+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B408DD28B86E0D00E77337 /* Fish+CoreDataClass.swift */; };
+		F5B408E228B86E0D00E77337 /* Fish+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B408DE28B86E0D00E77337 /* Fish+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F590C7A12879AE490043CFFA /* CoreDataModelFishingHistory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModelFishingHistory.xcdatamodel; sourceTree = "<group>"; };
 		F59954CE2865FAB3004F936C /* Fisher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fisher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F59954D12865FAB3004F936C /* FisherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FisherApp.swift; sourceTree = "<group>"; };
 		F59954D32865FAB3004F936C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F59954D52865FAB9004F936C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F59954D82865FAB9004F936C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F59954E228679828004F936C /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		F59954E42867A052004F936C /* FishingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishingHistory.swift; sourceTree = "<group>"; };
 		F59954E62867A864004F936C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		F5B408DB28B86E0D00E77337 /* FishingDay+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FishingDay+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		F5B408DC28B86E0D00E77337 /* FishingDay+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FishingDay+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		F5B408DD28B86E0D00E77337 /* Fish+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fish+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		F5B408DE28B86E0D00E77337 /* Fish+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fish+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +86,11 @@
 		F59954DF28679718004F936C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F59954E228679828004F936C /* History.swift */,
+				F5B408DB28B86E0D00E77337 /* FishingDay+CoreDataClass.swift */,
+				F5B408DC28B86E0D00E77337 /* FishingDay+CoreDataProperties.swift */,
+				F5B408DD28B86E0D00E77337 /* Fish+CoreDataClass.swift */,
+				F5B408DE28B86E0D00E77337 /* Fish+CoreDataProperties.swift */,
+				F590C7A02879AE490043CFFA /* CoreDataModelFishingHistory.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,10 +182,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F59954E328679828004F936C /* History.swift in Sources */,
+				F5B408E228B86E0D00E77337 /* Fish+CoreDataProperties.swift in Sources */,
+				F590C7A22879AE4A0043CFFA /* CoreDataModelFishingHistory.xcdatamodeld in Sources */,
+				F5B408E128B86E0D00E77337 /* Fish+CoreDataClass.swift in Sources */,
+				F5B408DF28B86E0D00E77337 /* FishingDay+CoreDataClass.swift in Sources */,
 				F59954E52867A052004F936C /* FishingHistory.swift in Sources */,
 				F59954D42865FAB3004F936C /* ContentView.swift in Sources */,
 				F59954E72867A864004F936C /* DetailView.swift in Sources */,
+				F5B408E028B86E0D00E77337 /* FishingDay+CoreDataProperties.swift in Sources */,
 				F59954D22865FAB3004F936C /* FisherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +393,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F590C7A02879AE490043CFFA /* CoreDataModelFishingHistory.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F590C7A12879AE490043CFFA /* CoreDataModelFishingHistory.xcdatamodel */,
+			);
+			currentVersion = F590C7A12879AE490043CFFA /* CoreDataModelFishingHistory.xcdatamodel */;
+			path = CoreDataModelFishingHistory.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F59954C62865FAB2004F936C /* Project object */;
 }

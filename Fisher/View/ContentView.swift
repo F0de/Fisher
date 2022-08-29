@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var fishingHistory = FishingHistory()
+    @ObservedObject var vm = FishingHistory()
+
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var fishingDays: FetchedResults<FishingDay>
     
     var body: some View {
-        TabView(selection: $fishingHistory.selectedView) {
+        TabView(selection: $vm.selectedView) {
             VStack{
                 Spacer()
-                Text("\(fishingHistory.fishingDays[0].fishCount)") //edit and use a fishingHistory.fishingDays(fishCount)
+                ForEach(fishingDays, id: \.self) { fishingDay in
+                    Text("\(fishingDay.fishCount)")
+                }
                 Spacer()
                 VStack(spacing: 40){
                     addFish
@@ -30,7 +35,7 @@ struct ContentView: View {
                 Text("Home")
             } .tag(1)
             NavigationView{
-                List(fishingHistory.fishingDays) { fishing in
+                List(fishingDays) { fishing in
                     NavigationLink(destination: DetailView()) {
                         FishingRow(fishingDays: fishing)
                     }
@@ -46,7 +51,7 @@ struct ContentView: View {
     
     var addFish: some View {
         Button{
-            fishingHistory.addFish()
+//            vm.addFish()
         } label: {
             Label("", systemImage: "plus")
                 .frame(width: 245, height: 245)
@@ -55,7 +60,7 @@ struct ContentView: View {
     }
     var deleteFish: some View {
         Button{
-            fishingHistory.deleteFish()
+//            vm.deleteFish()
         } label: {
             Label("", systemImage: "minus")
                 .frame(width: 145, height: 145)
@@ -66,14 +71,13 @@ struct ContentView: View {
 }
 
 struct FishingRow: View {
-    var fishingDays: History.FishingDay //edit in future
-
+    var fishingDays: FishingDay
+    
     var body: some View {
         HStack{
             Text("\(fishingDays.fishCount)")
             Spacer()
-            Text("\(fishingDays.date)").foregroundColor(.gray)
-//            Text("\(fishingDays.day).\(fishingDays.month)." + String(fishingDays.year)).foregroundColor(.gray)
+            Text("\((fishingDays.date?.formatted(date: .long, time: .omitted))!)").foregroundColor(.gray)
         }
     }
 }
